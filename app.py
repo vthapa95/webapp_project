@@ -1,2 +1,2 @@
 ```python
-print("Hello from Docker via GitHub Actions!")
+print("Hello from Docker via GitHub Actions! ")

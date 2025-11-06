@@ -1,15 +1,17 @@
-# Use the official Python image from Docker Hub as base
+# Use an official Python runtime as the base image
 FROM python:3.10-slim
 
-# Set a working directory inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy all files from the current directory to /app in the container
+# Copy the application code and requirements file into the container
 COPY . /app
 
-# Create a simple Python script
-# (You can save this as app.py in your repo)
-# print("Hello from Docker!")
+# Install the dependencies from requirements.txt
+RUN pip install -r requirements.txt
 
-# Run the Python script when the container starts
+# Expose port 8080 to allow external access
+EXPOSE 8080
+
+# Command to run the application
 CMD ["python", "app.py"]
